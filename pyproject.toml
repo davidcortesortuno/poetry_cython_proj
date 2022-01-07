@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pcython_proj"
+version = "0.1"
+description = "Example"
+authors = ["D. Cortes-Ortuno <d.c.o@gmail.com>"]
+license = "BSD-2-Clause"
+# readme = "README.md"
+# build = "build.py"
+
+# packages = [
+#     {include = "pcython_proj"},
+# ]
+# 
+# include = [
+#     # C extensions must be included in the wheel distributions
+#     {path = "pcython_proj/cython_lib/*.so", format = "wheel"},
+#     {path = "pcython_proj/cython_lib/*.pyd", format = "wheel"},
+# ]
+
+[tool.poetry.build]
+script = "build.py"
+# generate-setup-file = false
+
+# 05/01/21: latest numba, 0.55, only accepts numpy < 1.22
+[tool.poetry.dependencies]
+python = ">=3.8"
+numpy = "^1.22"
+cython = ">=0.29.26"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "cython", "setuptools"]
+build-backend = "poetry.core.masonry.api"
